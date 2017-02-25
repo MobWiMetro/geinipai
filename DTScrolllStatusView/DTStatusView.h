@@ -29,7 +29,7 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) BOOL isScroll;
 //界面书初始化 titleArray状态值,normalColor正常标题颜色，selectedColor选中的颜色，lineColor下面线条颜色如果等于nil就没有线条
-- (void)setUpStatusButtonWithTitlt:(NSArray *)titleArray NormalColor:(UIColor *)normalColor SelectedColor:(UIColor *)selectedColor LineColor:(UIColor *)lineColor;
+- (void)setUpStatusButtonWithTitle:(NSArray *)titleArray NormalColor:(UIColor *)normalColor SelectedColor:(UIColor *)selectedColor LineColor:(UIColor *)lineColor;
 
 -(void)changeTag:(int)tag;
 

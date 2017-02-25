@@ -11,7 +11,7 @@
 @implementation DTStatusView
 
 //界面搭建
-- (void)setUpStatusButtonWithTitlt:(NSArray *)titleArray NormalColor:(UIColor *)normalColor SelectedColor:(UIColor *)selectedColor LineColor:(UIColor *)lineColor{
+- (void)setUpStatusButtonWithTitle:(NSArray *)titleArray NormalColor:(UIColor *)normalColor SelectedColor:(UIColor *)selectedColor LineColor:(UIColor *)lineColor{
     
     //按钮创建
     float width = self.frame.size.width/titleArray.count;

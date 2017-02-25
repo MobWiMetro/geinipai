@@ -37,6 +37,7 @@
 		965958BE1E611A0C00D13CFE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958A61E611A0C00D13CFE /* UIScrollView+MJRefresh.m */; };
 		965958BF1E611A0C00D13CFE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958A81E611A0C00D13CFE /* UIView+MJExtension.m */; };
 		965958C01E611A0C00D13CFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 965958A91E611A0C00D13CFE /* README.md */; };
+		965958C31E611C2500D13CFE /* ScrollTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958C21E611C2500D13CFE /* ScrollTapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,8 @@
 		965958A71E611A0C00D13CFE /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		965958A81E611A0C00D13CFE /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		965958A91E611A0C00D13CFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		965958C11E611C2500D13CFE /* ScrollTapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTapViewController.h; sourceTree = "<group>"; };
+		965958C21E611C2500D13CFE /* ScrollTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				965958191E5FA62200D13CFE /* LaunchScreen.storyboard */,
 				9659581C1E5FA62200D13CFE /* Info.plist */,
 				965958081E5FA62200D13CFE /* Supporting Files */,
+				965958C11E611C2500D13CFE /* ScrollTapViewController.h */,
+				965958C21E611C2500D13CFE /* ScrollTapViewController.m */,
 			);
 			path = geinipai;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				965958131E5FA62200D13CFE /* SecondViewController.m in Sources */,
 				965958B21E611A0C00D13CFE /* MJRefreshAutoGifFooter.m in Sources */,
 				965958B41E611A0C00D13CFE /* MJRefreshAutoStateFooter.m in Sources */,
+				965958C31E611C2500D13CFE /* ScrollTapViewController.m in Sources */,
 				965958AF1E611A0C00D13CFE /* MJRefreshComponent.m in Sources */,
 				965958B01E611A0C00D13CFE /* MJRefreshFooter.m in Sources */,
 				965958C01E611A0C00D13CFE /* README.md in Sources */,

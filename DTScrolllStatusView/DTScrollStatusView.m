@@ -68,11 +68,11 @@
     self.statusView.delegate = self;
     self.statusView.isScroll = YES;
     if (curNormalTabColor && curSelectTabColor) {
-        [self.statusView setUpStatusButtonWithTitlt:titleArr NormalColor:curNormalTabColor SelectedColor:curSelectTabColor LineColor:DTColor(10, 193, 147, 1)];
+        [self.statusView setUpStatusButtonWithTitle:titleArr NormalColor:curNormalTabColor SelectedColor:curSelectTabColor LineColor:curSelectTabColor];
     }
     else
     {
-    [self.statusView setUpStatusButtonWithTitlt:titleArr NormalColor:DTColor(154, 156, 156, 1) SelectedColor:DTColor(10, 193, 147, 1) LineColor:DTColor(10, 193, 147, 1)];
+    [self.statusView setUpStatusButtonWithTitle:titleArr NormalColor:DTColor(154, 156, 156, 1) SelectedColor:DTColor(10, 193, 147, 1) LineColor:DTColor(10, 193, 147, 1)];
     }
     [self addSubview:self.statusView];
     float y = 45;

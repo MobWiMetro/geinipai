@@ -111,7 +111,7 @@
         <!--Following-->
         <scene sceneID="yfy-80-RJ0">
             <objects>
-                <viewController id="CLD-8G-DGn" sceneMemberID="viewController">
+                <viewController id="CLD-8G-DGn" customClass="ScrollTapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qrT-5O-OE5"/>
                         <viewControllerLayoutGuide type="bottom" id="LZv-4Y-fx9"/>

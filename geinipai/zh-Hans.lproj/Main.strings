@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
+"A5M-7J-77L.text" = "Loaded by FirstViewController";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "E0m-MJ-fRk"; */
+"E0m-MJ-fRk.title" = "我";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
+"KQZ-1w-vlD.text" = "First View";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UITabBarItem"; title = "Discovery"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "发现";
+
+/* Class = "UITabBarItem"; title = "Questions"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "问题";
+
+/* Class = "UITabBarItem"; title = "Following"; ObjectID = "f6A-SK-1NX"; */
+"f6A-SK-1NX.title" = "关注";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";

@@ -38,6 +38,8 @@
 		965958BF1E611A0C00D13CFE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958A81E611A0C00D13CFE /* UIView+MJExtension.m */; };
 		965958C01E611A0C00D13CFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 965958A91E611A0C00D13CFE /* README.md */; };
 		965958C31E611C2500D13CFE /* ScrollTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958C21E611C2500D13CFE /* ScrollTapViewController.m */; };
+		965958CA1E63B32700D13CFE /* QPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 965958C81E63B32700D13CFE /* QPSDK.bundle */; };
+		965958CB1E63B32700D13CFE /* QPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965958C91E63B32700D13CFE /* QPSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		965958A91E611A0C00D13CFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		965958C11E611C2500D13CFE /* ScrollTapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTapViewController.h; sourceTree = "<group>"; };
 		965958C21E611C2500D13CFE /* ScrollTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTapViewController.m; sourceTree = "<group>"; };
+		965958C81E63B32700D13CFE /* QPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QPSDK.bundle; sourceTree = "<group>"; };
+		965958C91E63B32700D13CFE /* QPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QPSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965958CB1E63B32700D13CFE /* QPSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +122,8 @@
 		965957FC1E5FA62100D13CFE = {
 			isa = PBXGroup;
 			children = (
+				965958C81E63B32700D13CFE /* QPSDK.bundle */,
+				965958C91E63B32700D13CFE /* QPSDK.framework */,
 				965958751E611A0C00D13CFE /* DTScrolllStatusView */,
 				965958071E5FA62200D13CFE /* geinipai */,
 				965958061E5FA62200D13CFE /* Products */,
@@ -336,6 +343,7 @@
 				965958AC1E611A0C00D13CFE /* LICENSE in Resources */,
 				9659581B1E5FA62200D13CFE /* LaunchScreen.storyboard in Resources */,
 				965958BB1E611A0C00D13CFE /* MJRefresh.bundle in Resources */,
+				965958CA1E63B32700D13CFE /* QPSDK.bundle in Resources */,
 				965958181E5FA62200D13CFE /* Assets.xcassets in Resources */,
 				965958161E5FA62200D13CFE /* Main.storyboard in Resources */,
 			);
@@ -496,8 +504,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YGGWGX2UN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = geinipai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huaining.geinipai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -508,8 +521,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YGGWGX2UN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = geinipai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huaining.geinipai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -534,6 +552,7 @@
 				965958211E5FA62200D13CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

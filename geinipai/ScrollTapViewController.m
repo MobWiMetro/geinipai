@@ -8,9 +8,12 @@
 
 #import "ScrollTapViewController.h"
 #import "DTScrollStatusView.h"
+#import "XRCollectionViewCell.h"
+#import "XRImage.h"
 
 @interface ScrollTapViewController ()<DTScrollStatusDelegate>
 @property (strong,nonatomic) DTScrollStatusView *scrollTapView;
+@property (nonatomic, strong) NSMutableArray<XRImage *> *images;
 @end
 
 @implementation ScrollTapViewController
@@ -29,10 +32,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSMutableArray *)images {
+    //从plist文件中取出字典数组，并封装成对象模型，存入模型数组中
+    if (!_images) {
+        _images = [NSMutableArray array];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"1.plist" ofType:nil];
+        NSArray *imageDics = [NSArray arrayWithContentsOfFile:path];
+        for (NSDictionary *imageDic in imageDics) {
+            XRImage *image = [XRImage imageWithImageDic:imageDic];
+            [_images addObject:image];
+        }
+    }
+    return _images;
+}
+
 -(void) refreshViewWithTag:(int)tag andIsHeader:(BOOL)isHeader {
     if(isHeader){
         if(tag==1){
-            UITableView *table = _scrollTapView.tableArr[tag-1];
+            UITableView *table = _scrollTapView.collectionArr[tag-1];
             [table reloadData];
         }
         NSLog(@"当前第%d个tableview的头部正在刷新",tag);
@@ -41,37 +58,23 @@
     }
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath
 {
-    return 1;
+    //根据图片的原始尺寸，及显示宽度，等比例缩放来计算显示高度
+    XRImage *image = self.images[indexPath.item];
+    return image.imageH / image.imageW * itemWidth;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    }
-    if (tableView.tag == 1) {
-        cell.textLabel.text = @"答案";
-    }
-    else if(tableView.tag == 2)
-    {
-        cell.textLabel.text = @"讲座";
-    }
+    return self.images.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    XRCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.imageURL = self.images[indexPath.item].imageURL;
     return cell;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (tableView.tag == 1) {
-        return 1;
-    }
-    else
-    {
-        return 2;
-    }
-    
 }
 
 @end

@@ -40,9 +40,17 @@
 		965958C31E611C2500D13CFE /* ScrollTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958C21E611C2500D13CFE /* ScrollTapViewController.m */; };
 		965958CA1E63B32700D13CFE /* QPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 965958C81E63B32700D13CFE /* QPSDK.bundle */; };
 		965958CB1E63B32700D13CFE /* QPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965958C91E63B32700D13CFE /* QPSDK.framework */; };
+		965958CF1E655A3F00D13CFE /* XRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958CD1E655A3F00D13CFE /* XRCollectionViewCell.m */; };
+		965958D01E655A3F00D13CFE /* XRCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965958CE1E655A3F00D13CFE /* XRCollectionViewCell.xib */; };
+		965958D41E655C6000D13CFE /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 965958D11E655C6000D13CFE /* 1.plist */; };
+		965958D51E655C6000D13CFE /* XRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 965958D31E655C6000D13CFE /* XRImage.m */; };
+		965958D71E6569BA00D13CFE /* libXRWaterfallLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 965958D61E6569BA00D13CFE /* libXRWaterfallLayout.a */; };
+		965958DA1E656F8000D13CFE /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 965958D81E6569C100D13CFE /* libSDWebImage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EA99CACFF606C39DA75A70B /* Pods-geinipai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geinipai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-geinipai/Pods-geinipai.debug.xcconfig"; sourceTree = "<group>"; };
+		4CD68E7210CEF1BFFBB138B0 /* libPods-geinipai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-geinipai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965958051E5FA62200D13CFE /* geinipai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geinipai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965958091E5FA62200D13CFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9659580B1E5FA62200D13CFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +113,16 @@
 		965958C21E611C2500D13CFE /* ScrollTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTapViewController.m; sourceTree = "<group>"; };
 		965958C81E63B32700D13CFE /* QPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QPSDK.bundle; sourceTree = "<group>"; };
 		965958C91E63B32700D13CFE /* QPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QPSDK.framework; sourceTree = "<group>"; };
+		965958CC1E655A3F00D13CFE /* XRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCollectionViewCell.h; sourceTree = "<group>"; };
+		965958CD1E655A3F00D13CFE /* XRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCollectionViewCell.m; sourceTree = "<group>"; };
+		965958CE1E655A3F00D13CFE /* XRCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XRCollectionViewCell.xib; sourceTree = "<group>"; };
+		965958D11E655C6000D13CFE /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		965958D21E655C6000D13CFE /* XRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRImage.h; sourceTree = "<group>"; };
+		965958D31E655C6000D13CFE /* XRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRImage.m; sourceTree = "<group>"; };
+		965958D61E6569BA00D13CFE /* libXRWaterfallLayout.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXRWaterfallLayout.a; path = "../../Library/Developer/Xcode/DerivedData/geinipai-grvsnakkgndmcibxdtbfznczdblr/Build/Products/Debug-iphonesimulator/XRWaterfallLayout/libXRWaterfallLayout.a"; sourceTree = "<group>"; };
+		965958D81E6569C100D13CFE /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/geinipai-grvsnakkgndmcibxdtbfznczdblr/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		965958DB1E656F8500D13CFE /* libPods-geinipai.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-geinipai.a"; path = "../../Library/Developer/Xcode/DerivedData/geinipai-grvsnakkgndmcibxdtbfznczdblr/Build/Products/Debug-iphonesimulator/libPods-geinipai.a"; sourceTree = "<group>"; };
+		C627016BCF5BE39D7985B535 /* Pods-geinipai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geinipai.release.xcconfig"; path = "Pods/Target Support Files/Pods-geinipai/Pods-geinipai.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965958DA1E656F8000D13CFE /* libSDWebImage.a in Frameworks */,
+				965958D71E6569BA00D13CFE /* libXRWaterfallLayout.a in Frameworks */,
 				965958CB1E63B32700D13CFE /* QPSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F155FE563F6B47CEBB594D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EA99CACFF606C39DA75A70B /* Pods-geinipai.debug.xcconfig */,
+				C627016BCF5BE39D7985B535 /* Pods-geinipai.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		965957FC1E5FA62100D13CFE = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +156,8 @@
 				965958751E611A0C00D13CFE /* DTScrolllStatusView */,
 				965958071E5FA62200D13CFE /* geinipai */,
 				965958061E5FA62200D13CFE /* Products */,
+				22F155FE563F6B47CEBB594D /* Pods */,
+				D2AC69BF76074B492F0A4D6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +172,12 @@
 		965958071E5FA62200D13CFE /* geinipai */ = {
 			isa = PBXGroup;
 			children = (
+				965958D11E655C6000D13CFE /* 1.plist */,
+				965958D21E655C6000D13CFE /* XRImage.h */,
+				965958D31E655C6000D13CFE /* XRImage.m */,
+				965958CC1E655A3F00D13CFE /* XRCollectionViewCell.h */,
+				965958CD1E655A3F00D13CFE /* XRCollectionViewCell.m */,
+				965958CE1E655A3F00D13CFE /* XRCollectionViewCell.xib */,
 				9659580B1E5FA62200D13CFE /* AppDelegate.h */,
 				9659580C1E5FA62200D13CFE /* AppDelegate.m */,
 				9659580E1E5FA62200D13CFE /* FirstViewController.h */,
@@ -281,6 +318,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		D2AC69BF76074B492F0A4D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				965958DB1E656F8500D13CFE /* libPods-geinipai.a */,
+				965958D81E6569C100D13CFE /* libSDWebImage.a */,
+				965958D61E6569BA00D13CFE /* libXRWaterfallLayout.a */,
+				4CD68E7210CEF1BFFBB138B0 /* libPods-geinipai.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,9 +336,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9659581F1E5FA62200D13CFE /* Build configuration list for PBXNativeTarget "geinipai" */;
 			buildPhases = (
+				1530CA4F4351079006D42CE2 /* [CP] Check Pods Manifest.lock */,
 				965958011E5FA62100D13CFE /* Sources */,
 				965958021E5FA62100D13CFE /* Frameworks */,
 				965958031E5FA62100D13CFE /* Resources */,
+				D7EEA760DA9331028469591D /* [CP] Embed Pods Frameworks */,
+				2C508BCD9054C5A98EF865F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				965958AC1E611A0C00D13CFE /* LICENSE in Resources */,
+				965958D01E655A3F00D13CFE /* XRCollectionViewCell.xib in Resources */,
+				965958D41E655C6000D13CFE /* 1.plist in Resources */,
 				9659581B1E5FA62200D13CFE /* LaunchScreen.storyboard in Resources */,
 				965958BB1E611A0C00D13CFE /* MJRefresh.bundle in Resources */,
 				965958CA1E63B32700D13CFE /* QPSDK.bundle in Resources */,
@@ -350,6 +403,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1530CA4F4351079006D42CE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C508BCD9054C5A98EF865F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-geinipai/Pods-geinipai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EEA760DA9331028469591D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-geinipai/Pods-geinipai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		965958011E5FA62100D13CFE /* Sources */ = {
@@ -363,6 +464,7 @@
 				965958AF1E611A0C00D13CFE /* MJRefreshComponent.m in Sources */,
 				965958B01E611A0C00D13CFE /* MJRefreshFooter.m in Sources */,
 				965958C01E611A0C00D13CFE /* README.md in Sources */,
+				965958CF1E655A3F00D13CFE /* XRCollectionViewCell.m in Sources */,
 				9659580D1E5FA62200D13CFE /* AppDelegate.m in Sources */,
 				965958BE1E611A0C00D13CFE /* UIScrollView+MJRefresh.m in Sources */,
 				965958BD1E611A0C00D13CFE /* UIScrollView+MJExtension.m in Sources */,
@@ -372,6 +474,7 @@
 				965958B61E611A0C00D13CFE /* MJRefreshBackNormalFooter.m in Sources */,
 				965958101E5FA62200D13CFE /* FirstViewController.m in Sources */,
 				9659580A1E5FA62200D13CFE /* main.m in Sources */,
+				965958D51E655C6000D13CFE /* XRImage.m in Sources */,
 				965958B91E611A0C00D13CFE /* MJRefreshNormalHeader.m in Sources */,
 				965958B31E611A0C00D13CFE /* MJRefreshAutoNormalFooter.m in Sources */,
 				965958BF1E611A0C00D13CFE /* UIView+MJExtension.m in Sources */,
@@ -501,6 +604,7 @@
 		};
 		965958201E5FA62200D13CFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EA99CACFF606C39DA75A70B /* Pods-geinipai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YGGWGX2UN;
@@ -518,6 +622,7 @@
 		};
 		965958211E5FA62200D13CFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C627016BCF5BE39D7985B535 /* Pods-geinipai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YGGWGX2UN;

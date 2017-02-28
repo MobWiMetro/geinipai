@@ -9,18 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "DTStatusView.h"
 #import "MJRefresh.h"
+#import "XRWaterfallLayout.h"
+
 typedef NS_ENUM(NSInteger , ScrollTapType)
 {
     ScrollTapTypeWithNavigation,  //含有导航栏
     ScrollTapTypeWithNavigationAndTabbar, //含有tarbar
     ScrollTapTypeWithNothing,  //什么都不含有
 };
-@protocol DTScrollStatusDelegate<UITableViewDelegate,UITableViewDataSource>
+@protocol DTScrollStatusDelegate<UICollectionViewDataSource,XRWaterfallLayoutDelegate>
 
 -(void)refreshViewWithTag:(int)tag andIsHeader:(BOOL)isHeader;
 
 @end
-@interface DTScrollStatusView : UIView<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,DTStatusViewDelegate>
+@interface DTScrollStatusView : UIView<UIScrollViewDelegate,UICollectionViewDataSource,XRWaterfallLayoutDelegate,DTStatusViewDelegate>
 {
     BOOL isrefresh;
     UIColor *curSelectTabColor;
@@ -31,11 +33,11 @@ typedef NS_ENUM(NSInteger , ScrollTapType)
 /**
  *  获取当前所选中的tableview
  */
-@property (strong , nonatomic) UITableView *curTable;
+@property (strong , nonatomic) UICollectionView *curCollection;
 /**
  *  含有的tableiview 数组  
  */
-@property (strong , nonatomic) NSMutableArray *tableArr;
+@property (strong , nonatomic) NSMutableArray *collectionArr;
 @property (strong , nonatomic) id<DTScrollStatusDelegate> scrollStatusDelegate;
 /**
  *  初始化方法，根据不同类型的自动设置frame，类型有是否有导航栏，tarbar，或者两者都没有

@@ -7,7 +7,8 @@
 //
 
 #import "DTScrollStatusView.h"
-
+#import "XRCollectionViewCell.h"
+#import "XRWaterfallLayout.h"
 
 @implementation DTScrollStatusView
 
@@ -90,82 +91,85 @@
     _mainScrollView.showsVerticalScrollIndicator = NO;
     _mainScrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:_mainScrollView];
-    _tableArr = [NSMutableArray array];
+    _collectionArr = [NSMutableArray array];
     for ( int i = 0; i < titleArr.count; i++) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth*i, 0, kScreenWidth, mainScrollH)];
-        table.tableFooterView = [[UIView alloc]init];
-        table.delegate = self;
-        table.dataSource = self;
-        table.tag = i+1;
+        //创建瀑布流布局
+        XRWaterfallLayout *waterfall = [XRWaterfallLayout waterFallLayoutWithColumnCount:3];
+        
+        //设置各属性的值
+        //    waterfall.rowSpacing = 10;
+        //    waterfall.columnSpacing = 10;
+        //    waterfall.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        
+        //或者一次性设置
+        [waterfall setColumnSpacing:10 rowSpacing:10 sectionInset:UIEdgeInsetsMake(10, 10, 10, 10)];
+        
+        
+        //设置代理，实现代理方法
+        waterfall.delegate = self;
+        /*
+         //或者设置block
+         [waterfall setItemHeightBlock:^CGFloat(CGFloat itemWidth, NSIndexPath *indexPath) {
+         //根据图片的原始尺寸，及显示宽度，等比例缩放来计算显示高度
+         XRImage *image = self.images[indexPath.item];
+         return image.imageH / image.imageW * itemWidth;
+         }];
+         */
+        //创建collectionView
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(kScreenWidth*i, 0, kScreenWidth, mainScrollH) collectionViewLayout:waterfall];
+        collectionView.backgroundColor = [UIColor whiteColor];
+        [collectionView registerNib:[UINib nibWithNibName:@"XRCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+        collectionView.dataSource = self;
+        collectionView.tag = i+1;
         __weak DTScrollStatusView *weakSelf = self;
-        table.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        collectionView.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             isrefresh = YES;
             if (_scrollStatusDelegate) {
                 
                 [weakSelf.scrollStatusDelegate refreshViewWithTag:i+1 andIsHeader:YES];
-                [table.mj_header endRefreshing];
+                [collectionView.mj_header endRefreshing];
                 isrefresh = NO;
             }
         }];
-        table.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             isrefresh = YES;
             if (_scrollStatusDelegate) {
                 isrefresh = YES;
                 [weakSelf.scrollStatusDelegate refreshViewWithTag:i+1 andIsHeader:NO];
             }
-            [table.mj_footer endRefreshing];
+            [collectionView.mj_footer endRefreshing];
             isrefresh = NO;
         }];
-        [_tableArr addObject:table];
-        [_mainScrollView addSubview:table];
+        [_collectionArr addObject:collectionView];
+        [_mainScrollView addSubview:collectionView];
     }
     //获取当前tableview
-    if (_tableArr.count > 0) {
-        _curTable = _tableArr[0];
+    if (_collectionArr.count > 0) {
+        _curCollection = _collectionArr[0];
     }
 }
 #pragma mark--delegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath
 {
     if (_scrollStatusDelegate) {
-        if ([_scrollStatusDelegate respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-            return  [_scrollStatusDelegate numberOfSectionsInTableView:tableView];
-            
+        if ([_scrollStatusDelegate respondsToSelector:@selector(waterfallLayout:itemHeightForWidth:atIndexPath:)]) {
+            return [_scrollStatusDelegate waterfallLayout:waterfallLayout itemHeightForWidth:itemWidth atIndexPath:indexPath];
         }
     }
     return 0;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return   [_scrollStatusDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (_scrollStatusDelegate) {
-        if ([_scrollStatusDelegate respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-            return [_scrollStatusDelegate tableView:tableView numberOfRowsInSection:section];
+        if ([_scrollStatusDelegate respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
+            return [_scrollStatusDelegate collectionView:collectionView numberOfItemsInSection:section];
         }
-        
     }
     return 0;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_scrollStatusDelegate) {
-        if ([_scrollStatusDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)] ) {
-            return [_scrollStatusDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
-        }
-        
-    }
-    return 44;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (_scrollStatusDelegate) {
-        if ([_scrollStatusDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-            return [_scrollStatusDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
-        }
-    }
+    return [_scrollStatusDelegate collectionView:collectionView cellForItemAtIndexPath:indexPath];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -174,7 +178,7 @@
     if (isrefresh == NO) {
         int scrollIndex = scrollView.contentOffset.x/kScreenWidth;
         [_statusView changeTag:scrollIndex];
-        _curTable = _tableArr[scrollIndex];
+        _curCollection = _collectionArr[scrollIndex];
     }
     }
 }
@@ -182,6 +186,6 @@
 {
     
    [_mainScrollView setContentOffset:CGPointMake(kScreenWidth*index, 0) animated:YES];
-    _curTable = _tableArr[index];
+    _curCollection = _collectionArr[index];
 }
 @end

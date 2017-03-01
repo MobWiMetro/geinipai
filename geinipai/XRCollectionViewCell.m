@@ -15,6 +15,8 @@
 @implementation XRCollectionViewCell
 - (void)setImageURL:(NSURL *)imageURL {
     _imageURL = imageURL;
-    [self.imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [self.imageView sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"placeholder"] options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        NSLog(@"=====error=%@",error);
+    }];
 }
 @end

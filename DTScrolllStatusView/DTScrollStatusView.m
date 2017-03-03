@@ -94,15 +94,15 @@
     _collectionArr = [NSMutableArray array];
     for ( int i = 0; i < titleArr.count; i++) {
         //创建瀑布流布局
-        XRWaterfallLayout *waterfall = [XRWaterfallLayout waterFallLayoutWithColumnCount:3];
+        XRWaterfallLayout *waterfall = [XRWaterfallLayout waterFallLayoutWithColumnCount:2];
         
         //设置各属性的值
         //    waterfall.rowSpacing = 10;
-        //    waterfall.columnSpacing = 10;
+            waterfall.columnSpacing = 1;
         //    waterfall.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
         
         //或者一次性设置
-        [waterfall setColumnSpacing:10 rowSpacing:10 sectionInset:UIEdgeInsetsMake(10, 10, 10, 10)];
+//        [waterfall setColumnSpacing:10 rowSpacing:10 sectionInset:UIEdgeInsetsMake(10, 10, 10, 10)];
         
         
         //设置代理，实现代理方法

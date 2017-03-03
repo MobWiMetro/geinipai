@@ -19,22 +19,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dlf-8m-WAO">
-                        <rect key="frame" x="0.0" y="0.0" width="87" height="138"/>
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="119"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-Ek-Mcp">
-                        <rect key="frame" x="22" y="59" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a4-bo-UWX">
+                        <rect key="frame" x="13" y="117" width="30" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="dlf-8m-WAO" secondAttribute="bottom" id="CHk-a1-IH7"/>
-                <constraint firstItem="dlf-8m-WAO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nKy-eD-Gh4"/>
-                <constraint firstAttribute="trailing" secondItem="dlf-8m-WAO" secondAttribute="trailing" id="pe2-5a-U3e"/>
-                <constraint firstItem="dlf-8m-WAO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="z9b-JJ-sGY"/>
+                <constraint firstItem="9a4-bo-UWX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="95H-15-IOu"/>
+                <constraint firstAttribute="trailing" secondItem="dlf-8m-WAO" secondAttribute="trailing" id="f0T-9w-ZGq"/>
+                <constraint firstAttribute="bottom" secondItem="dlf-8m-WAO" secondAttribute="bottom" constant="19" id="g1J-Ge-m61"/>
+                <constraint firstItem="dlf-8m-WAO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gsY-Rb-lp1"/>
+                <constraint firstAttribute="bottom" secondItem="9a4-bo-UWX" secondAttribute="bottom" id="hi5-Uk-sHm"/>
+                <constraint firstItem="dlf-8m-WAO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="n3K-7H-Myj"/>
             </constraints>
             <size key="customSize" width="87" height="138"/>
             <connections>

@@ -49,12 +49,12 @@
 -(void) refreshViewWithTag:(int)tag andIsHeader:(BOOL)isHeader {
     if(isHeader){
         if(tag==1){
-            UITableView *table = _scrollTapView.collectionArr[tag-1];
-            [table reloadData];
+            UICollectionView *collection = _scrollTapView.collectionArr[tag-1];
+            [collection reloadData];
         }
-        NSLog(@"当前第%d个tableview的头部正在刷新",tag);
+        NSLog(@"当前第%d个collectionview的头部正在刷新",tag);
     } else {
-        NSLog(@"当前第%d个tableview的尾部正在刷新",tag);
+        NSLog(@"当前第%d个collectionview的尾部正在刷新",tag);
     }
 }
 
@@ -62,7 +62,7 @@
 {
     //根据图片的原始尺寸，及显示宽度，等比例缩放来计算显示高度
     XRImage *image = self.images[indexPath.item];
-    return image.imageH / image.imageW * itemWidth;
+    return image.imageH / image.imageW * itemWidth+19;
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -73,7 +73,9 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     XRCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageURL = self.images[indexPath.item].imageURL;
+    XRImage *image = self.images[indexPath.item];
+    cell.imageURL = image.imageURL;
+//    [cell setBottomBarViewBounds:CGRectMake(0, image.imageH, image.imageW, image.imageW*13/87)];
     return cell;
 }
 
